@@ -23,6 +23,7 @@
 
 ##### Uso de cheerio en la consola del navegador
  + [tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo "tampermonkey")
+   + [configuracion](https://github.com/xdany01/miscelaneas/blob/main/Tampermonkey.md "configuracion")
 
 ##### Cookies:
  + [editthiscookie](https://chromewebstore.google.com/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg "editthiscookie")
