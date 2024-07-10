@@ -3,6 +3,9 @@
  + [it-tools](https://chromewebstore.google.com/detail/it-tools/ehbfkcepbjbhjiilmhnjcomjegnpcjoc "it-tools")
  + [web-developer](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm "web-developer")
 
+##### Captura de pantalla:
+ + [screenshot](https://chromewebstore.google.com/detail/impresionante-captura-de/nlipoenfbbikpbjkfpfillcgkoblgpmj?hl=es "screenshot")
+
 ##### Scrapeo por HTML:
  + [automize](https://chromewebstore.google.com/detail/automize-testingscraping/iebfoaldapgggcpjialmbnhcendcnkpi "automize")
 
@@ -56,3 +59,6 @@
 ##### Mi documentación
 > Son solo funciones de utilidad general en javascript
 [docsUtils](https://github.com/xdany01/docsUtils/releases "docsUtils")
+
+> Información de ayuda sobre expresiones regulares con algunos ejemplos en javascript
+[My-Regex-cheatsheet](https://github.com/xdany01/miscelaneas/blob/main/My%20Regex%20Cheatsheet.md "My-Regex-cheatsheet")
