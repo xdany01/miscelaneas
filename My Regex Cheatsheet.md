@@ -255,9 +255,6 @@ console.log(text.match(regex)); // ["I", "have", "a", "and", "a"]
 Aquí, `\b(?!cat|dog)\w+` busca palabras que **no** están precedidas por "cat" o "dog". En este caso, todas las palabras excepto "cat" y "dog" cumplen con esta condición.
 
 
-
-Claro, te daré una explicación más detallada sobre los grupos no capturadores en expresiones regulares, con ejemplos en JavaScript.
-
 # Grupo No Capturador
 
 En las expresiones regulares, los paréntesis `(...)` se utilizan para agrupar partes de una expresión y capturar las coincidencias encontradas. Sin embargo, a veces solo necesitas agrupar partes de la expresión sin capturar las coincidencias. Aquí es donde los grupos no capturadores (`(?: ... )`) son útiles.
@@ -329,8 +326,6 @@ En las expresiones regulares, los paréntesis `(...)` se utilizan para agrupar p
 
 - **Rendimiento**: Reducen la carga de captura, lo que puede mejorar el rendimiento en expresiones regulares complejas.
 - **Claridad**: Mejoran la legibilidad del código al indicar que ciertas partes de la expresión se agrupan solo por razones de lógica o cuantificación, no para captura.
-
-Claro, te proporcionaré una explicación detallada sobre los grupos capturadores por índice y los grupos capturadores nombrados en expresiones regulares, con ejemplos en JavaScript.
 
 # Grupos Capturadores por Índice
 
