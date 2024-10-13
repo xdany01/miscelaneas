@@ -58,7 +58,7 @@
 
 ##### Mi documentación
 > Son solo funciones de utilidad general en javascript
-[docsUtils](https://github.com/xdany01/docsUtils/releases "docsUtils")
+[docsUtils](https://melodious-frangipane-4c77bc.netlify.app/ "docsUtils")
 
 > Información de ayuda sobre expresiones regulares con algunos ejemplos en javascript
 [My-Regex-cheatsheet](https://github.com/xdany01/miscelaneas/blob/main/My%20Regex%20Cheatsheet.md "My-Regex-cheatsheet")
