@@ -422,4 +422,87 @@ Los grupos capturadores nombrados permiten asignar nombres a los grupos en lugar
   console.log(match.groups.lastName); // "Doe"
   ```
 
+# **Referencias en Expresiones Regulares**
 
+### 1. **Introducción a las Expresiones Regulares**
+- Las **expresiones regulares** (regex o regexp) son patrones utilizados para hacer coincidencias dentro de cadenas de texto.
+- Pueden buscar, extraer o manipular texto de una manera eficiente.
+- Una de las funcionalidades más poderosas es la **referencia a grupos capturados**.
+
+### 2. **Grupos Capturados**
+- Un **grupo capturado** se define usando paréntesis `( )` en una expresión regular.
+- Sirven para encapsular parte del patrón y hacer referencia a ellos más tarde.
+  
+#### **Ejemplo de grupo capturado:**
+
+```javascript
+const regex = /(foo)bar/;
+const match = "foobar".match(regex);
+console.log(match[1]);  // "foo"
+```
+En este ejemplo, el grupo `(foo)` captura el texto `"foo"`. La referencia es accesible en `match[1]`.
+
+### 3. **Referencia hacia Atrás (\1, \2, etc.)**
+- Dentro de la misma expresión regular, las referencias a **grupos capturados** se hacen con **`\1`, `\2`, ...`**.
+- **`\1`** se refiere al primer grupo capturado, **`\2`** al segundo, y así sucesivamente.
+
+#### **Uso de referencias hacia atrás:**
+
+```javascript
+const regex = /(\w+)\s\1/;  // El grupo \1 debe repetirse
+const testString = "hello hello";
+console.log(regex.test(testString));  // true
+```
+
+Aquí, la expresión busca dos palabras iguales seguidas (referencia hacia atrás). `"hello hello"` coincide porque la segunda palabra repite lo capturado por el primer grupo.
+
+#### **Otro ejemplo:**
+```javascript
+const regex = /(\d{2})-(\d{2})-\1/;  // \1 referencia al primer grupo
+const date = "12-34-12";  // Repite el primer grupo
+console.log(regex.test(date));  // true
+```
+En este caso, `\1` hace referencia al primer grupo capturado, por lo que el formato debe ser `XX-XX-XX` donde las primeras y últimas dos cifras son iguales.
+
+### 4. **Referencia en Reemplazo ($1, $2, etc.)**
+- En la cadena de reemplazo, las referencias a grupos capturados se hacen con **`$1`, `$2`, ...`**.
+- Sirven para reutilizar el texto capturado en el patrón dentro de la **nueva cadena** que generas con `replace()`.
+
+#### **Ejemplo de referencia en reemplazo:**
+
+```javascript
+const input = "John Doe";
+const result = input.replace(/(\w+) (\w+)/, '$2, $1');
+console.log(result);  // "Doe, John"
+```
+Aquí, `$1` captura el primer nombre y `$2` el apellido. La referencia permite intercambiar el orden del nombre y apellido.
+
+#### **Otro ejemplo:**
+```javascript
+const input = "123-456-7890";
+const result = input.replace(/(\d{3})-(\d{3})-(\d{4})/, '($1) $2-$3');
+console.log(result);  // "(123) 456-7890"
+```
+En este caso, los números capturados por los grupos son reutilizados para dar formato a un número de teléfono.
+
+### 5. **Ejemplo Completo:**
+Vamos a combinar ambas formas, referencias hacia atrás y en reemplazo, en un solo caso:
+
+#### **Problema:**
+Tienes un texto que contiene números duplicados y quieres reemplazarlos con un símbolo de repetición.
+
+```javascript
+const input = "La clave es 123-123 o 456-456";
+const result = input.replace(/(\d{3})-\1/g, '$1 (repetido)');
+console.log(result);  // "La clave es 123 (repetido) o 456 (repetido)"
+```
+
+1. **Patrón de búsqueda**: `(\d{3})-\1` busca tres dígitos (`\d{3}`) seguidos de un guion y los mismos tres dígitos (referencia hacia atrás `\1`).
+2. **Reemplazo**: En la cadena de reemplazo, `$1` usa los tres dígitos capturados y añade "(repetido)" para indicar que se repiten.
+
+### 6. **Resumen de Referencias**
+- **`\1`, `\2`, etc.**: Se usan **dentro de la expresión regular** para hacer referencia a grupos capturados previamente (referencias hacia atrás).
+- **`$1`, `$2`, etc.**: Se usan en **cadenas de reemplazo** con `replace()` para reutilizar las coincidencias de los grupos capturados.
+
+### 7. **Conclusión**
+Las referencias en expresiones regulares te permiten trabajar con coincidencias previas dentro del mismo patrón o en reemplazos, lo que las convierte en una herramienta poderosa para manipular texto.
